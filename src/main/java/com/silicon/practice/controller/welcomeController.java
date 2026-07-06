@@ -31,7 +31,7 @@ import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping({"/home", ""})
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin
 @Tag(name = "Welcome API", description = "Operations related to Welcome management")
 public class welcomeController {
 	
