@@ -18,7 +18,7 @@ public class CorsConfig {
 
         config.setAllowedOrigins(List.of(
         	    "http://localhost:4200",
-        	    "https://your-app.vercel.app"
+        	    "https://doxtushar-student-management-system.netlify.app"
         ));
 
         config.setAllowedMethods(List.of(
