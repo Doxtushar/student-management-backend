@@ -11,33 +11,24 @@ import java.util.List;
 @Configuration
 public class CorsConfig {
 
-    @Bean
-    public CorsFilter corsFilter() {
+	@Bean
+	public CorsFilter corsFilter() {
 
-        CorsConfiguration config = new CorsConfiguration();
+		CorsConfiguration config = new CorsConfiguration();
 
-        config.setAllowedOrigins(List.of(
-        	    "http://localhost:4200",
-        	    "https://doxtushar-student-management-system.netlify.app"
-        ));
+		config.setAllowedOrigins(
+				List.of("http://localhost:4200", "https://student-management-system-six-khaki.vercel.app"));
 
-        config.setAllowedMethods(List.of(
-                "GET",
-                "POST",
-                "PUT",
-                "DELETE",
-                "OPTIONS"
-        ));
+		config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
 
-        config.setAllowedHeaders(List.of("*"));
+		config.setAllowedHeaders(List.of("*"));
 
-        config.setAllowCredentials(true);
+		config.setAllowCredentials(true);
 
-        UrlBasedCorsConfigurationSource source =
-                new UrlBasedCorsConfigurationSource();
+		UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
 
-        source.registerCorsConfiguration("/**", config);
+		source.registerCorsConfiguration("/**", config);
 
-        return new CorsFilter(source);
-    }
+		return new CorsFilter(source);
+	}
 }
